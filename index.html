@@ -1,0 +1,69 @@
+<!-- create_profile.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Contributor Profile</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h2>Create Your Contributor Profile</h2>
+    <form method="post" enctype="multipart/form-data" action="/profiles/create-profile/">
+        <input type="text" name="bio" placeholder="Enter your bio">
+        <input type="file" name="profile_picture" accept="image/*">
+        <button type="submit">Submit</button>
+    </form>
+    <!-- Link to your JavaScript file -->
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
+<!-- submit_photo.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Photo</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h2>Submit Your Photo</h2>
+    <form method="post" enctype="multipart/form-data" action="/profiles/submit-photo/" id="photo-form">
+        <input type="file" name="image" accept="image/*" onchange="displayImagePreview(this, 'image-preview')">
+        <img id="image-preview" src="#" alt="Image Preview">
+        <input type="text" name="description" placeholder="Enter photo description">
+        <button type="submit">Submit</button>
+    </form>
+    <!-- Link to your JavaScript file -->
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
+<!-- download_photo.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Photo</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h2>Download Photo</h2>
+    <img src="{% photo_url %}" alt="Photo Preview">
+    <a href="{% download_url %}" download>
+        <button>Download Photo</button>
+    </a>
+    <!-- Link to your JavaScript file -->
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
